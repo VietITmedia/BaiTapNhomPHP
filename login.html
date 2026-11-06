@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Đăng nhập | VinHR Enterprise</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/login.css?v=original-5">
+</head>
+
+<body hidden>
+
+  <main class="login-card">
+
+    <!-- Logo & tên hệ thống -->
+    <div class="login-brand">
+      <span class="brand-logo">VINGROUP</span>
+      <h1>Hệ thống quản lý nhân sự</h1>
+      <p>VinHR Enterprise Management Solution</p>
+    </div>
+
+    <!-- Form đăng nhập -->
+    <form id="form-dang-nhap">
+
+      <!-- Thông báo -->
+      <p id="thongbao" role="alert" aria-live="polite"></p>
+
+      <!-- Tên đăng nhập -->
+      <div class="form-group">
+        <label for="ten"><i class="fa-solid fa-user" aria-hidden="true"></i> Tên đăng nhập</label>
+        <input
+          id="ten"
+          name="ten"
+          type="text"
+          placeholder="Nhập tài khoản của bạn..."
+          autocomplete="username"
+          required
+        >
+      </div>
+
+      <!-- Mật khẩu -->
+      <div class="form-group">
+        <label for="mk"><i class="fa-solid fa-lock" aria-hidden="true"></i> Mật khẩu</label>
+        <input
+          id="mk"
+          name="mk"
+          type="password"
+          placeholder="••••••••"
+          autocomplete="current-password"
+          required
+        >
+      </div>
+
+      <!-- Nút đăng nhập -->
+      <button id="nut-dang-nhap" type="submit">
+        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+        <span>Đăng nhập hệ thống</span>
+      </button>
+
+    </form>
+
+    <div class="footer">
+      © 2026 VinHR Enterprise · Hệ thống quản lý nhân sự
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script type="module" src="js/pages/login.js"></script>
+</body>
+</html>

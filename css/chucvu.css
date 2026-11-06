@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Danh sách chức vụ (chucvu.html) - dùng cùng app.css
+   ========================================================================== */
+
+.filter-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  background: var(--gray-50);
+  color: var(--gray-600);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 24px;
+}
+
+.toolbar-note { color: var(--gray-500); font-size: 14px; }
+
+.data-card > #thongbao { margin: 0 20px 14px; }
+
+/* Các cột do chucvu.js tạo: ID | Mã | Tên | Mô tả | Trạng thái | Thao tác */
+#bang-chuc-vu td:nth-child(1) { width: 60px; color: var(--gray-400); font-weight: 600; }
+#bang-chuc-vu td:nth-child(2) { color: var(--vin-red); font-weight: 700; }
+#bang-chuc-vu td:nth-child(3) { color: var(--gray-800); font-weight: 600; }
+#bang-chuc-vu td:nth-child(4) { color: var(--gray-500); }
+#bang-chuc-vu td:nth-child(5) { color: var(--gray-600); font-weight: 700; white-space: nowrap; }
+#bang-chuc-vu td:nth-child(6) { white-space: nowrap; }
+
+/* Trạng thái hiển thị trung tính: quyền thao tác không phản ánh trạng thái dữ liệu. */
+.page-chucvu table { min-width: 800px; table-layout: fixed; }
+.page-chucvu th, .page-chucvu td { padding: 16px 12px; overflow-wrap: anywhere; }
+.page-chucvu th { white-space: normal; }
+#bang-chuc-vu td:nth-child(4) { max-width: 340px; overflow-wrap: anywhere; }
+
+/* Tỷ lệ cột ổn định khi tên và mô tả dài. */
+.chucvu-column-id { width: 6%; }
+.chucvu-column-ma { width: 13%; }
+.chucvu-column-ten { width: 22%; }
+.chucvu-column-mota { width: 26%; }
+.chucvu-column-trangthai { width: 15%; }
+.chucvu-column-thaotac { width: 18%; }
+#bang-chuc-vu td:nth-child(6) { white-space: normal; }
+.filter-control input { flex-shrink: 0; width: 16px; height: 16px; margin: 0; }
+@media (max-width: 600px) {
+  .toolbar { align-items: stretch; padding: 16px; }
+  .filter-control { width: 100%; }
+}

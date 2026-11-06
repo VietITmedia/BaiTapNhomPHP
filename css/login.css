@@ -1,0 +1,75 @@
+/* Trang đăng nhập ban đầu: ảnh nền toàn màn hình, form trắng ở giữa. */
+:root {
+  --vin-red: #8b0000;
+  --vin-red-dark: #6a0000;
+  --gray-100: #f4f5f7;
+  --gray-300: #d1d5db;
+  --gray-400: #717b89;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px 16px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200") center / cover no-repeat fixed,
+    #111827;
+  color: var(--gray-800);
+  font: 14px/1.55 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 32px;
+  border-top: 8px solid var(--vin-red);
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+}
+.login-brand { margin-bottom: 28px; text-align: center; }
+.brand-logo {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--vin-red);
+  color: white;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.login-brand h1 { margin: 0; color: var(--gray-800); font-size: 19px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; }
+.login-brand p { margin: 2px 0 0; color: var(--gray-500); font-size: 12px; font-weight: 500; }
+#form-dang-nhap { display: grid; gap: 20px; }
+.form-group label { display: block; margin-bottom: 6px; color: var(--gray-700); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.form-group label i { margin-right: 4px; color: var(--vin-red); }
+.form-group input { width: 100%; min-height: 44px; padding: 10px 14px; border: 1px solid var(--gray-300); border-radius: 8px; color: var(--gray-800); font-size: 14px; transition: border-color 0.15s, box-shadow 0.15s; }
+.form-group input::placeholder { color: var(--gray-400); }
+.form-group input:focus { outline: none; border-color: var(--vin-red); box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.12); }
+#nut-dang-nhap { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; border: 0; border-radius: 8px; background: var(--vin-red); color: white; font-size: 14px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; box-shadow: none; cursor: pointer; transition: background-color 0.15s; }
+#nut-dang-nhap:hover { background: var(--vin-red-dark); }
+#nut-dang-nhap:disabled { opacity: 0.65; cursor: wait; }
+#nut-dang-nhap:focus-visible { outline: 2px solid var(--vin-red); outline-offset: 2px; }
+#thongbao { margin: 0; font-size: 12px; font-weight: 600; }
+#thongbao:empty { display: none; }
+#thongbao:not(:empty) { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 8px; background: #fee2e2; }
+#thongbao::before { font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f06a"; }
+.footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--gray-100); color: var(--gray-400); font-size: 11px; text-align: center; }
+@media (max-width: 480px) {
+  .login-card { padding: 24px 20px; }
+  .login-brand h1 { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}

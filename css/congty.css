@@ -1,0 +1,46 @@
+/* Giao diện congty.html — dùng cùng app.css. */
+#menu a[href="congty.html"] { background: var(--red-50); color: var(--vin-red); font-weight: 700 !important; }
+#menu a[href="congty.html"]::before { content: "\f1ad"; }
+.company-card { min-width: 0; width: 100%; }
+.company-card .card-header > div { min-width: 0; flex: 1 1 280px; }
+.company-card .card-title { overflow-wrap: anywhere; }
+.company-body { display: grid; gap: 24px; padding: 28px; }
+.company-section { display: grid; gap: 18px; min-width: 0; }
+.company-section h2 { display: flex; gap: 10px; align-items: center; margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); font-size: 16px; color: var(--gray-700); }
+.company-section h2 i { color: var(--vin-red); }
+.company-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.company-wide { grid-column: 1 / -1; }
+.company-note { display: flex; align-items: start; gap: 12px; padding: 16px; border: 1px solid var(--red-100); border-radius: 10px; background: var(--red-50); font-size: 14px; color: var(--gray-600); }
+.company-note i { color: var(--vin-red); margin-top: 4px; }
+.company-note strong { display: block; color: var(--vin-red); margin-bottom: 3px; }
+.company-hint { color: var(--gray-500); font-size: 13px; }
+#loi-form:empty { display: none; }
+#loi-form { margin: 20px 28px 0; padding: 14px 18px 14px 36px; border: 1px solid var(--red-200); border-radius: 8px; background: var(--red-50); color: var(--vin-red); font-size: 14px; }
+@media (max-width: 600px) {
+  .company-body { padding: 20px 16px; }
+  .company-grid { grid-template-columns: minmax(0, 1fr); }
+  #loi-form { margin: 16px 16px 0; }
+  .company-card .card-header > .btn { width: 100%; }
+}
+
+.page-congty .app-layout, .page-congty .header-inner { max-width: 1760px; }
+.company-card > #thongbao:not(:empty) { margin: 20px 24px; }
+.company-table-hint { padding: 16px 24px; color: var(--gray-500); font-size: 13px; }
+.company-table-hint i { margin-right: 6px; }
+.company-card table { table-layout: fixed; min-width: 1040px; }
+.company-card th, .company-card td { padding: 16px 12px; white-space: normal; overflow-wrap: anywhere; }
+#bang-cong-ty td[data-cot="ma"] { color: var(--vin-red); font-weight: 700; }
+#bang-cong-ty td[data-cot="ten"] { font-weight: 600; color: var(--gray-800); }
+#bang-cong-ty td[data-cot="so_nhan_vien"], #bang-cong-ty td[data-cot="so_phong_ban"] { text-align: center; font-variant-numeric: tabular-nums; }
+.company-card th:nth-child(5), .company-card th:nth-child(6) { text-align: center; }
+#bang-cong-ty select { display: block; width: 100%; max-width: 100%; margin-top: 8px; }
+
+/* Largeur des colonnes du tableau. */
+.congty-column-1 { width: 9%; }
+.congty-column-2 { width: 19%; }
+.congty-column-3 { width: 11%; }
+.congty-column-4 { width: 15%; }
+.congty-column-5 { width: 8%; }
+.congty-column-6 { width: 8%; }
+.congty-column-7 { width: 12%; }
+.congty-column-8 { width: 18%; }

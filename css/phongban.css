@@ -1,0 +1,34 @@
+/* Quản lý phòng ban — dùng cùng app.css. */
+#menu a[href="phongban.html"] { background: var(--red-50); color: var(--vin-red); font-weight: 700 !important; }
+#menu a[href="phongban.html"]::before { content: "\f0e8"; }
+
+.department-list { min-width: 0; }
+.department-filter { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.department-filter label { font-size: 14px; font-weight: 600; }
+.department-filter select { flex: 1 1 240px; max-width: 400px; }
+.department-list > #thongbao:not(:empty) { margin: 16px 24px; }
+.department-table-hint { padding: 16px 24px; font-size: 13px; color: var(--gray-500); }
+.department-table-hint i { margin-right: 6px; }
+.department-list table { min-width: 1120px; table-layout: fixed; }
+.department-list th, .department-list td { padding: 16px 12px; white-space: normal; overflow-wrap: anywhere; }
+#bang-phong-ban td[data-cot="ma"] { color: var(--vin-red); font-weight: 700; }
+#bang-phong-ban td[data-cot="ten"] { color: var(--gray-800); font-weight: 600; }
+#bang-phong-ban td[data-cot="email"] { color: var(--gray-500); }
+#bang-phong-ban td[data-cot="so_nhan_vien"], .department-list th:nth-child(7) { text-align: center; font-variant-numeric: tabular-nums; }
+#bang-phong-ban select { display: block; width: 100%; max-width: 100%; margin-top: 8px; }
+@media (max-width: 600px) {
+  .department-filter { padding: 16px; align-items: stretch; }
+  .department-filter label { width: 100%; }
+  .department-filter select { max-width: none; }
+  .department-table-hint { padding: 16px; }
+  .department-list > #thongbao:not(:empty) { margin: 16px; }
+}
+.department-column-1 { width: 9%; }
+.department-column-2 { width: 14%; }
+.department-column-3 { width: 12%; }
+.department-column-4 { width: 12%; }
+.department-column-5 { width: 13%; }
+.department-column-6 { width: 10%; }
+.department-column-7 { width: 7%; }
+.department-column-8 { width: 10%; }
+.department-column-9 { width: 13%; }

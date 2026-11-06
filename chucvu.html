@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Quản lý chức vụ | VinHR Enterprise</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css?v=layout-3">
+  <link rel="stylesheet" href="css/chucvu.css?v=align-4">
+</head>
+
+<body class="page-chucvu" hidden>
+  <a class="skip-link" href="#contenu-principal">Chuyển đến nội dung chính</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">VINGROUP</span>
+        <div class="brand-copy">
+          <strong>Hệ thống quản lý nhân sự tập đoàn</strong>
+          <small>VinHR Enterprise Management Solution</small>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="user-badge">
+          <span class="user-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></span>
+          <span class="user-copy">
+            <strong data-nguoi-dung="ho_ten"></strong>
+            <small data-nguoi-dung="chuc_vu"></small>
+          </span>
+        </div>
+        <button class="logout-btn" type="button" data-hanh-dong="dang-xuat">
+          <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Đăng xuất
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR: menu do app.js tạo theo quyền -->
+    <details class="sidebar" open>
+      <summary class="sidebar-toggle" aria-label="Ẩn hoặc hiện menu điều hướng" title="Ẩn hoặc hiện menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span class="sidebar-toggle-label">Danh mục quản lý</span>
+        <i class="fa-solid fa-chevron-left sidebar-toggle-arrow" aria-hidden="true"></i>
+      </summary>
+      <div class="sidebar-card">
+        <nav id="menu" aria-label="Điều hướng chính"></nav>
+      </div>
+      <div class="sidebar-note">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        <div><strong>VinHR Enterprise</strong><span>Nền tảng quản lý nhân sự tập trung</span></div>
+      </div>
+    </details>
+
+    <!-- MAIN -->
+    <main id="contenu-principal" class="container" tabindex="-1">
+
+      <p class="breadcrumb">
+        <i class="fa-solid fa-house" aria-hidden="true"></i> Hệ thống nhân sự / Quản lý chức vụ
+      </p>
+
+      <!-- DATA CARD -->
+      <div class="page-heading">
+          <div>
+            <h1 id="tieu-de-chuc-vu" class="card-title"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> Danh sách chức vụ</h1>
+            <p class="card-subtitle">Quản lý danh mục chức danh trong toàn tập đoàn</p>
+          </div>
+
+          <!-- Thêm chức vụ: quyền hiển thị do JS quyết định -->
+          <a id="lien-ket-them" class="btn btn-primary" href="chucvu-them.html" hidden>
+            <i class="fa-solid fa-plus" aria-hidden="true"></i> Thêm chức vụ mới
+          </a>
+        </div>
+
+      <section class="card data-card">
+
+        
+
+        <!-- TOOLBAR -->
+        <div class="toolbar">
+          <span class="toolbar-note">Thông tin các chức vụ trong hệ thống</span>
+
+          <label class="filter-control">
+            <input type="checkbox" id="chi-dang-dung" checked>
+            <span>Chỉ hiện chức vụ đang dùng</span>
+          </label>
+        </div>
+
+        <!-- THÔNG BÁO -->
+        <p id="thongbao" role="alert" aria-live="polite"></p>
+
+        <!-- TABLE -->
+        <div class="table-wrapper" role="region" aria-labelledby="tieu-de-chuc-vu" tabindex="0">
+          <table>
+            <colgroup>
+              <col class="chucvu-column-id">
+              <col class="chucvu-column-ma">
+              <col class="chucvu-column-ten">
+              <col class="chucvu-column-mota">
+              <col class="chucvu-column-trangthai">
+              <col class="chucvu-column-thaotac">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Mã chức vụ</th>
+                <th scope="col">Tên chức vụ</th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Thao tác</th>
+              </tr>
+            </thead>
+
+            <!-- Dữ liệu được tạo bởi chucvu.js -->
+            <tbody id="bang-chuc-vu"></tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">© 2026 VinHR Enterprise · Hệ thống quản lý nhân sự</footer>
+
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script type="module" src="js/pages/chucvu.js"></script>
+
+</body>
+</html>

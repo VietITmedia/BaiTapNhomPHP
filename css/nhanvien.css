@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Danh sách nhân viên (nhanvien.html)
+   dùng cùng app.css
+   ========================================================================== */
+
+/* 1. DANH SÁCH: TÌM KIẾM, BẢNG, PHÂN TRANG
+   ========================================================================== */
+.search-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 24px;
+}
+
+.search-box { position: relative; flex: 1 1 260px; max-width: 360px; }
+
+.search-box i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+.search-box input { padding-left: 34px; }
+
+.search-toolbar select { width: auto; flex: 0 1 260px; color: var(--gray-600); }
+
+.data-card > #thongbao { margin: 0 20px 14px; }
+
+/* Giữ bảng trong vùng nội dung; chỉ bảng cuộn khi màn hình thiếu chỗ. */
+.page-nhanvien .app-layout, .page-nhanvien .header-inner { max-width: 1760px; }
+.page-nhanvien .data-card { min-width: 0; max-width: 100%; }
+.page-nhanvien .card-header > div { min-width: 0; flex: 1 1 320px; }
+.page-nhanvien .card-title { overflow-wrap: anywhere; }
+.page-nhanvien .table-wrapper { min-width: 0; max-width: 100%; }
+.page-nhanvien table { min-width: 1040px; table-layout: fixed; }
+.page-nhanvien th, .page-nhanvien td {
+  padding: 14px 10px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.page-nhanvien .table-actions { white-space: normal; }
+.page-nhanvien .table-actions select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 8px;
+}
+.page-nhanvien .table-actions a { padding: 7px 9px; }
+.page-nhanvien .table-scroll-hint {
+  margin: 0;
+  padding: 0 24px 12px;
+  color: var(--gray-500);
+  font-size: 13px;
+}
+.page-nhanvien .table-scroll-hint i { margin-right: 6px; }
+.page-nhanvien .search-box { min-width: 0; max-width: 480px; }
+.page-nhanvien .search-toolbar select { flex-basis: 300px; }
+
+@media (min-width: 1025px) {
+  .page-nhanvien .app-layout { grid-template-columns: 240px minmax(0, 1fr); }
+  .page-nhanvien .app-layout:has(> .sidebar:not([open])) { grid-template-columns: 52px minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .page-nhanvien .search-toolbar { padding: 16px; }
+  .page-nhanvien .search-toolbar select { flex-basis: 100%; }
+  .page-nhanvien .table-scroll-hint { padding: 0 16px 12px; }
+  .page-nhanvien .card-header > .btn { width: 100%; white-space: normal; }
+  .page-nhanvien .pagination { padding: 16px; }
+}
+
+/* Cột Mã và Họ tên trong bảng nhân viên */
+#bang-nhan-vien td[data-cot="ma"] { color: var(--vin-red); font-weight: 700; white-space: normal; }
+#bang-nhan-vien td[data-cot="ho_ten"] { color: var(--gray-800); font-weight: 600; }
+#bang-nhan-vien td[data-cot="email"] { color: var(--gray-500); }
+#bang-nhan-vien td[data-cot="trang_thai"] { color: var(--gray-600); font-weight: 700; white-space: normal; }
+
+/* Liên kết "Xem": icon con mắt thay cho icon bút mặc định của app.css */
+td a.detail-link::before { content: "\f06e"; }
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--gray-200);
+  color: var(--gray-500);
+  font-size: 14px;
+}
+
+.pagination-buttons { display: flex; gap: 8px; }
+
+
+@media (max-width: 600px) {
+  .search-toolbar > * { flex: 1 1 100%; max-width: none; }
+}
+
+/* Largeur des colonnes du tableau. */
+.nhanvien-column-1 { width: 10%; }
+.nhanvien-column-2 { width: 12%; }
+.nhanvien-column-3 { width: 10%; }
+.nhanvien-column-4 { width: 10%; }
+.nhanvien-column-5 { width: 9%; }
+.nhanvien-column-6 { width: 13%; }
+.nhanvien-column-7 { width: 9%; }
+.nhanvien-column-8 { width: 10%; }
+.nhanvien-column-9 { width: 17%; }

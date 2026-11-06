@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Chi tiết nhân viên | VinHR Enterprise</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css?v=layout-3">
+  <link rel="stylesheet" href="css/nhanvien-chitiet.css?v=layout-3">
+</head>
+
+<body class="page-nhanvien-chitiet" hidden>
+  <a class="skip-link" href="#contenu-principal">Chuyển đến nội dung chính</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">VINGROUP</span>
+        <div class="brand-copy">
+          <strong>Hệ thống quản lý nhân sự tập đoàn</strong>
+          <small>VinHR Enterprise Management Solution</small>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="user-badge">
+          <span class="user-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></span>
+          <span class="user-copy">
+            <strong data-nguoi-dung="ho_ten"></strong>
+            <small data-nguoi-dung="chuc_vu"></small>
+          </span>
+        </div>
+        <button class="logout-btn" type="button" data-hanh-dong="dang-xuat">
+          <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Đăng xuất
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR: menu do app.js tạo theo quyền -->
+    <details class="sidebar" open>
+      <summary class="sidebar-toggle" aria-label="Ẩn hoặc hiện menu điều hướng" title="Ẩn hoặc hiện menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span class="sidebar-toggle-label">Danh mục quản lý</span>
+        <i class="fa-solid fa-chevron-left sidebar-toggle-arrow" aria-hidden="true"></i>
+      </summary>
+      <div class="sidebar-card">
+        <nav id="menu" aria-label="Điều hướng chính"></nav>
+      </div>
+      <div class="sidebar-note">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        <div><strong>VinHR Enterprise</strong><span>Nền tảng quản lý nhân sự tập trung</span></div>
+      </div>
+    </details>
+
+    <!-- MAIN -->
+    <main id="contenu-principal" class="container" tabindex="-1">
+
+      <p class="breadcrumb">
+        <i class="fa-solid fa-house" aria-hidden="true"></i> Hệ thống nhân sự / Quản lý nhân viên / Chi tiết
+      </p>
+
+      <section class="card data-card">
+
+        <div class="card-header">
+          <div>
+            <h1 class="card-title"><i class="fa-solid fa-id-badge" aria-hidden="true"></i> Hồ sơ nhân viên</h1>
+            <p class="card-subtitle">Mức thông tin bạn được xem: <strong id="muc-xem"></strong></p>
+          </div>
+
+          <a href="nhanvien.html" class="back-link">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Quay lại danh sách
+          </a>
+        </div>
+
+        <!-- THÔNG BÁO: nằm ngoài khung chi tiết để vẫn hiện khi JS ẩn khung -->
+        <p id="thongbao" role="alert" aria-live="polite"></p>
+
+        <!-- khung này bị ẩn khi không tìm thấy nhân viên -->
+        <div id="khung-chi-tiet">
+
+          <div class="profile-head">
+            <div class="profile-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+            <div>
+              <p class="profile-name" data-cot="ho_ten"></p>
+              <div class="profile-meta">
+                <span><i class="fa-solid fa-id-card" aria-hidden="true"></i>Mã NV: <strong data-cot="ma"></strong></span>
+                <span><i class="fa-solid fa-user-tie" aria-hidden="true"></i><strong data-cot="chuc_vu"></strong></span>
+                <span><i class="fa-solid fa-building" aria-hidden="true"></i><strong data-cot="cong_ty"></strong></span>
+              </div>
+            </div>
+            <span class="card-label">Hồ sơ nhân sự</span>
+          </div>
+
+          <div class="card-body">
+            <div class="bordered">
+              <table class="employee-table">
+                <tbody>
+                  <tr><th scope="row">Mã nhân viên</th><td data-cot="ma"></td></tr>
+                  <tr><th scope="row">Họ và tên</th><td data-cot="ho_ten"></td></tr>
+                  <tr><th scope="row">Giới tính</th><td data-cot="gioi_tinh"></td></tr>
+                  <tr><th scope="row">Công ty</th><td data-cot="cong_ty"></td></tr>
+                  <tr><th scope="row">Phòng ban</th><td data-cot="phong_ban"></td></tr>
+                  <tr><th scope="row">Chức vụ</th><td data-cot="chuc_vu"></td></tr>
+                  <tr><th scope="row">Email</th><td data-cot="email"></td></tr>
+                  <tr><th scope="row">Số điện thoại</th><td data-cot="sdt"></td></tr>
+                  <tr><th scope="row">Ngày sinh</th><td data-cot="ngay_sinh"></td></tr>
+                  <tr><th scope="row">Địa chỉ</th><td data-cot="dia_chi"></td></tr>
+                  <tr><th scope="row">Ngày vào làm</th><td data-cot="ngay_vao_lam"></td></tr>
+                  <tr><th scope="row">Trạng thái</th><td data-cot="trang_thai"></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">© 2026 VinHR Enterprise · Hệ thống quản lý nhân sự</footer>
+
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script type="module" src="js/pages/nhanvien-chitiet.js"></script>
+
+</body>
+</html>

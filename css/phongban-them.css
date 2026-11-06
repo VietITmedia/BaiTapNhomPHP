@@ -1,0 +1,22 @@
+/* Thêm phòng ban — dùng cùng app.css. */
+#menu a[href="phongban.html"] { background: var(--red-50); color: var(--vin-red); font-weight: 700 !important; }
+#menu a[href="phongban.html"]::before { content: "\f0e8"; }
+
+.department-card { width: 100%; max-width: 960px; margin: 0 auto; }
+.department-card .card-header { align-items: flex-start; }
+.department-card .card-header > div { flex: 1 1 280px; min-width: 0; }
+.department-body { display: grid; gap: 28px; padding: 28px; }
+.department-section { display: grid; gap: 20px; min-width: 0; }
+.department-section h2 { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); font-size: 16px; color: var(--gray-700); }
+.department-section h2 i { color: var(--vin-red); }
+.department-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.department-wide { grid-column: 1 / -1; }
+.department-hint { color: var(--gray-500); font-size: 13px; }
+#loi-form:empty { display: none; }
+#loi-form { margin: 20px 28px 0; padding: 14px 18px 14px 36px; border: 1px solid var(--red-200); border-radius: 8px; background: var(--red-50); color: var(--vin-red); font-size: 14px; }
+@media (max-width: 600px) {
+  .department-body, .department-card .card-header { padding: 20px 16px; }
+  .department-grid { grid-template-columns: minmax(0, 1fr); }
+  #loi-form { margin: 16px 16px 0; }
+  .department-card .back-link { width: 100%; justify-content: center; }
+}

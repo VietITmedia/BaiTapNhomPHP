@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đổi mật khẩu | VinHR Enterprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css?v=layout-3">
+  <link rel="stylesheet" href="css/doi-mat-khau.css?v=2">
+</head>
+<body class="page-doi-mat-khau" hidden>
+  <a class="skip-link" href="#noi-dung-chinh">Chuyển đến nội dung chính</a>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">VINGROUP</span>
+        <div class="brand-copy">
+          <strong>Hệ thống quản lý nhân sự tập đoàn</strong>
+          <small>VinHR Enterprise Management Solution</small>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="user-badge">
+          <span class="user-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></span>
+          <span class="user-copy">
+            <strong data-nguoi-dung="ho_ten"></strong>
+            <small data-nguoi-dung="chuc_vu"></small>
+          </span>
+        </div>
+        <button class="logout-btn" type="button" data-hanh-dong="dang-xuat">
+          <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Đăng xuất
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="password-shell">
+    <!-- Menu và đường phân cách được JS ẩn khi bắt buộc đổi mật khẩu. -->
+    <nav id="menu" aria-label="Điều hướng chính"></nav>
+    <hr id="gach-menu">
+
+    <main id="noi-dung-chinh" tabindex="-1">
+      <div class="password-intro">
+        <span class="security-label"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Bảo mật tài khoản</span>
+        <h1 id="tieu-de">Đổi mật khẩu</h1>
+        <p id="gioi-thieu-bat-buoc" hidden>
+          Xin chào <strong data-nguoi-dung="ho_ten"></strong>.
+          Bạn đang đăng nhập bằng mật khẩu tạm, cần đặt mật khẩu mới trước khi sử dụng hệ thống.
+        </p>
+        <p id="gioi-thieu-chu-dong" hidden>
+          Tài khoản: <strong data-nguoi-dung="ten_dang_nhap"></strong>.
+          Hãy nhập mật khẩu hiện tại, đặt mật khẩu mới, rồi xác minh bằng mã gửi đến email.
+        </p>
+      </div>
+
+      <div class="password-grid">
+        <section class="card password-card" aria-label="Biểu mẫu đổi mật khẩu">
+          <div class="password-notifications">
+            <ul id="loi-form" role="alert"></ul>
+            <p id="thong-bao" role="status" aria-live="polite"></p>
+          </div>
+
+          <!-- Giữ nguyên ID và hidden để JS quản lý các bước. -->
+          <form id="form-mat-khau-cu" class="password-form" aria-labelledby="tieu-de-mat-khau-cu" hidden>
+            <div class="step-heading">
+              <span class="step-icon" aria-hidden="true"><i class="fa-solid fa-user-lock"></i></span>
+              <h2 id="tieu-de-mat-khau-cu">Xác nhận mật khẩu hiện tại</h2>
+              <p>Xác minh tài khoản của bạn trước khi thiết lập mật khẩu mới.</p>
+            </div>
+            <div class="form-group">
+              <label for="mat-khau-cu">Mật khẩu hiện tại</label>
+              <input id="mat-khau-cu" name="mat_khau_cu" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu đang sử dụng" required>
+            </div>
+            <label class="password-visibility" for="hien-mat-khau-cu">
+              <input id="hien-mat-khau-cu" type="checkbox"> Hiện mật khẩu
+            </label>
+            <p id="khoa" class="password-lock" role="alert" hidden></p>
+            <button id="nut-kiem-tra" class="btn btn-primary" type="submit">Tiếp tục</button>
+          </form>
+
+          <form id="form-mat-khau" class="password-form" aria-labelledby="tieu-de-mat-khau-moi" hidden>
+            <div class="step-heading">
+              <span class="step-icon" aria-hidden="true"><i class="fa-solid fa-key"></i></span>
+              <h2 id="tieu-de-mat-khau-moi">Thiết lập mật khẩu mới</h2>
+              <p>Sử dụng mật khẩu riêng, đủ mạnh và dễ nhớ với bạn.</p>
+            </div>
+            <div class="form-group">
+              <label for="mat-khau-moi">Mật khẩu mới</label>
+              <input id="mat-khau-moi" name="mat_khau_moi" type="password" autocomplete="new-password" placeholder="Nhập mật khẩu mới" minlength="8" aria-describedby="yeu-cau-mat-khau" required>
+            </div>
+            <div class="form-group">
+              <label for="nhap-lai">Xác nhận mật khẩu mới</label>
+              <input id="nhap-lai" name="nhap_lai" type="password" autocomplete="new-password" placeholder="Nhập lại mật khẩu mới" minlength="8" required>
+            </div>
+            <label class="password-visibility" for="hien-mat-khau">
+              <input id="hien-mat-khau" type="checkbox"> Hiện mật khẩu
+            </label>
+            <div class="password-submit">
+              <button id="nut-gui-ma" class="btn btn-primary" type="submit">Gửi mã xác minh đến email</button>
+              <p>Mật khẩu chỉ được thay đổi sau khi xác minh email thành công.</p>
+            </div>
+          </form>
+
+          <form id="form-otp" class="password-form" aria-labelledby="tieu-de-otp" hidden>
+            <div class="step-heading">
+              <span class="step-icon" aria-hidden="true"><i class="fa-solid fa-envelope-circle-check"></i></span>
+              <h2 id="tieu-de-otp">Xác minh email</h2>
+              <p>Mã xác minh gồm 6 chữ số đã được gửi đến <strong id="email-che"></strong>.</p>
+            </div>
+            <div class="form-group">
+              <label for="ma-otp">Mã xác minh</label>
+              <input id="ma-otp" name="ma_otp" type="text" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="one-time-code" placeholder="000000" aria-describedby="goi-y-otp dem-nguoc con-luot" required>
+              <small id="goi-y-otp">Kiểm tra hộp thư đến hoặc thư rác để lấy mã xác minh.</small>
+            </div>
+            <div class="otp-status">
+              <p id="dem-nguoc"></p>
+              <p id="con-luot"></p>
+            </div>
+            <div class="otp-actions">
+              <button id="nut-xac-nhan" class="btn btn-primary" type="submit">Xác nhận và đổi mật khẩu</button>
+              <button id="nut-gui-lai" class="btn" type="button">Gửi lại mã</button>
+            </div>
+            <button id="nut-nhap-lai-mk" class="password-back" type="button">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Nhập lại mật khẩu mới
+            </button>
+          </form>
+        </section>
+
+        <aside class="password-guide" aria-labelledby="tieu-de-huong-dan">
+          <span class="guide-label">Hướng dẫn bảo mật</span>
+          <h2 id="tieu-de-huong-dan">Một mật khẩu mạnh,<br>thêm một lớp an tâm.</h2>
+          <p>Đặt mật khẩu mới theo các yêu cầu sau:</p>
+          <ul id="yeu-cau-mat-khau" class="password-requirements">
+            <li>Tối thiểu 8 ký tự.</li>
+            <li>Bao gồm chữ hoa, chữ thường và chữ số.</li>
+            <li>Có ký tự đặc biệt, ví dụ: @ # ! $.</li>
+            <li>Khác mật khẩu hiện tại và không chứa tên đăng nhập.</li>
+          </ul>
+          <div class="security-note">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <p>Không chia sẻ mật khẩu hoặc mã xác minh với bất kỳ ai.</p>
+          </div>
+          <p class="signin-note">Sau khi đổi mật khẩu thành công, bạn sẽ đăng nhập lại bằng mật khẩu mới.</p>
+        </aside>
+      </div>
+
+      <p id="ve-trang-chu" class="password-home" hidden>
+        <a class="back-link" href="dashboard.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Về trang chủ</a>
+      </p>
+      <footer class="footer">© 2026 VinHR Enterprise · Hệ thống quản lý nhân sự</footer>
+    </main>
+  </div>
+
+  <script type="module" src="js/pages/doi-mat-khau.js"></script>
+</body>
+</html>

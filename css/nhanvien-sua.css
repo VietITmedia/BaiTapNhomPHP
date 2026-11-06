@@ -1,0 +1,109 @@
+/* 2. FORM THÊM NHÂN VIÊN
+   ========================================================================== */
+.employee-form { max-width: 920px; }
+
+.form-body { display: grid; gap: 28px; padding: 28px; font-size: 14px; }
+
+.form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-700);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.form-section-title i { color: var(--vin-red); }
+
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+
+.form-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+/* Danh sách lỗi do nhanvien-them.js điền */
+#loi-form:empty { display: none; }
+
+#loi-form {
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 16px 12px 36px;
+  border: 1px solid var(--red-200);
+  border-radius: 8px;
+  background: var(--red-50);
+  color: #b91c1c;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+@media (max-width: 900px) {
+  .form-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .form-grid, .form-grid-3 { grid-template-columns: minmax(0, 1fr); }
+  .form-body { padding: 20px 16px; }
+}
+
+/* Bổ sung riêng cho trang sửa; dùng bố cục và form chung của hệ thống. */
+.page-nhanvien-sua #menu a[href="nhanvien.html"] {
+  background: var(--red-50);
+  color: var(--vin-red);
+  font-weight: 700 !important;
+}
+
+.employee-edit { width: 100%; max-width: 920px; margin: 0 auto; }
+
+.employee-edit .edit-section { display: grid; gap: 20px; min-width: 0; }
+.employee-edit .edit-hint { color: var(--gray-500); font-size: 14px; }
+
+.employee-summary {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 20px;
+  margin: 0 0 4px;
+  padding: 20px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  background: var(--gray-50);
+}
+
+.employee-summary > div { min-width: 0; }
+.employee-summary dt, .current-manager > span { color: var(--gray-500); font-size: 14px; }
+.employee-summary dd { margin: 5px 0 0; font-size: 15px; font-weight: 600; overflow-wrap: anywhere; }
+.employee-summary #ma { color: var(--vin-red); }
+.employee-summary .summary-hint { color: var(--gray-500); font-size: 13px; font-weight: 400; }
+
+.employee-edit .manager-grid { align-items: start; }
+.current-manager { display: grid; gap: 6px; padding: 16px; border: 1px solid var(--gray-200); border-radius: 8px; background: var(--gray-50); }
+.current-manager strong { color: var(--gray-700); font-size: 15px; overflow-wrap: anywhere; }
+
+/* Thông báo vẫn hiển thị khi JavaScript ẩn form do lỗi quyền hoặc dữ liệu. */
+.employee-edit #loi-form:not(:empty), .employee-edit #thanh-cong:not(:empty) {
+  width: auto;
+  max-width: none;
+  margin: 20px 24px 0;
+}
+
+.employee-edit #thanh-cong:empty { display: none; }
+.employee-edit #thanh-cong:not(:empty) {
+  padding: 12px 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: var(--green-700);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.employee-edit .edit-feedback { display: flow-root; }
+.employee-edit .edit-feedback:has(#loi-form:not(:empty)) { padding-bottom: 20px; }
+
+@media (max-width: 600px) {
+  .employee-edit .card-header { padding: 20px 16px; }
+  .employee-summary { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 16px; }
+  .employee-summary > div + div { padding-top: 12px; border-top: 1px solid var(--gray-200); }
+  .employee-edit #loi-form:not(:empty), .employee-edit #thanh-cong:not(:empty) { margin: 16px 16px 0; }
+}

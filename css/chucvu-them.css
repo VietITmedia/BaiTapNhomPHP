@@ -1,0 +1,16 @@
+/* Giao diện chucvu-them.html — dùng cùng app.css. */
+.form-card { max-width: 960px; }
+.form-card .card-header { padding: 24px 28px; align-items: flex-start; }
+.form-card .card-header > div { flex: 1 1 280px; min-width: 0; }
+.form-card form { gap: 24px; padding: 28px; }
+.form-card > #thongbao { margin: 20px 28px 0; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+textarea { min-height: 144px; resize: vertical; }
+
+@media (max-width: 600px) {
+  .form-card .card-header { padding: 20px 16px; }
+  .form-card form { padding: 20px 16px; }
+  .form-card > #thongbao { margin: 16px 16px 0; }
+  .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .form-card .back-link { width: 100%; justify-content: center; }
+}

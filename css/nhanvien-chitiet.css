@@ -1,0 +1,79 @@
+/* Trang chi tiết nhân viên — dùng cùng app.css. */
+/* 3. BẢNG THÔNG TIN DẠNG 2 CỘT (chi tiết & kết quả)
+   ========================================================================== */
+.employee-table { table-layout: fixed; }
+
+.employee-table th {
+  width: 34%;
+  border-top: 0;
+  background: var(--gray-50);
+  color: var(--gray-500);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.employee-table td { color: var(--gray-800); font-weight: 600; overflow-wrap: anywhere; }
+
+.employee-table tr:hover { background: transparent; }
+
+.bordered { overflow: hidden; border: 1px solid var(--gray-200); border-radius: 10px; }
+
+/* 4. CHI TIẾT NHÂN VIÊN
+   ========================================================================== */
+.profile-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: var(--vin-red);
+  color: var(--red-100);
+  font-size: 26px;
+}
+
+.profile-name { overflow-wrap: anywhere; color: var(--gray-800); font-size: 24px; font-weight: 700; }
+
+.profile-head > div { min-width: 0; }
+
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-top: 6px;
+  color: var(--gray-600);
+  font-size: 14px;
+}
+
+.profile-meta i { margin-right: 4px; color: var(--vin-red); }
+
+.profile-meta strong { font-weight: 700; }
+
+.card-label {
+  margin-left: auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--red-50);
+  color: var(--vin-red);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.page-nhanvien-chitiet .data-card > #thongbao { margin: 16px 20px 0; }
+
+
+@media (max-width: 600px) {
+  .card-label { margin-left: 0; }
+  .employee-table th { width: 42%; }
+}
